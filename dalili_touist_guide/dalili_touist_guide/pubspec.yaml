@@ -1,0 +1,81 @@
+name: dalili_tourist_guide
+description: تطبيق دليل سياحي تفاعلي للمعالم السياحية في سوريا
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # الخطوط
+  google_fonts: ^6.1.0
+  
+  # الرسوم المتحركة
+  flutter_animate: ^4.5.0
+  
+  # إدارة الحالة
+  provider: ^6.0.5
+  
+  # فتح الروابط والاتصالات
+  url_launcher: ^6.2.1
+  
+  # الأيقونات
+  cupertino_icons: ^1.0.6
+  cached_network_image: 3.4.1
+  shared_preferences: ^2.3.2
+  go_router: ^14.6.2
+  equatable: ^2.0.7
+  crypto: ^3.0.6
+  intl: ^0.20.2
+  sqflite: 2.4.2+1
+  path: ^1.9.1
+  sqflite_common_ffi_web: ^1.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # قواعد الكود
+  flutter_lints: ^3.0.0
+  
+  # أيقونة التطبيق
+  flutter_launcher_icons: ^0.13.1
+  
+  # شاشة البداية
+  flutter_native_splash: ^2.3.8
+
+flutter:
+  uses-material-design: true
+  generate: true
+  # الأصول (الصور والخطوط)
+
+  # الخطوط المخصصة (اختياري)
+  # fonts:
+  #   - family: Cairo
+  #     fonts:
+  #       - asset: assets/fonts/Cairo-Regular.ttf
+  #       - asset: assets/fonts/Cairo-Bold.ttf
+  #         weight: 700
+
+# ============= إعدادات أيقونة التطبيق =============
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+  adaptive_icon_background: "#0D47A1"
+  adaptive_icon_foreground: "assets/icon/icon_foreground.png"
+  remove_alpha_ios: true
+
+# ============= إعدادات شاشة البداية =============
+flutter_native_splash:
+  color: "#0D47A1"
+  image: assets/splash.png
+  android: true
+  ios: true
+  web: false
+  fullscreen: true

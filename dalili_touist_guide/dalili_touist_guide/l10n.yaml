@@ -1,0 +1,5 @@
+arb-dir: assets/locales
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+untranslated-messages-file: desiredFileName.txt # File to output untranslated messages
+output-dir: lib/gen_l10n

@@ -1,0 +1,52 @@
+<!-- android/app/src/main/AndroidManifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- ============= الأذونات ============= -->
+    <!-- أذن الوصول إلى الإنترنت -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- أذن الوصول إلى الموقع (اختياري - للخرائط) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- أذن الوصول إلى الهاتف (للاتصال) -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:label="دليلي السياحي"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:theme="@style/LaunchTheme">
+        
+        <!-- النشاط الرئيسي -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            
+            <!-- النية الرئيسية -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- لم يتم حذف النشاط الافتراضي -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+        
+        <!-- إعدادات Google Maps (إذا كنت تستخدم خرائط جوجل) -->
+        <!-- <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_GOOGLE_MAPS_API_KEY" /> -->
+            
+    </application>
+</manifest>

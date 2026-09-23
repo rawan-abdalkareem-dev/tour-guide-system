@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1010550252367",
+    "project_id": "dalilitouristguide",
+    "storage_bucket": "dalilitouristguide.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010550252367:android:e491d6585520b4f0429b3a",
+        "android_client_info": {
+          "package_name": "at.dkhlallh.dalili_touist_guide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFbNrxtJdYd3YOyvLUWhSS8lx5AnX_iNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
