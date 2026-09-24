@@ -264,8 +264,8 @@ class _AdminCategoriesScreenState extends State<AdminCategoriesScreen> {
                     final cat = _categories[index];
                     return Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 14,
+                        horizontal: 14,
+                        vertical: 12,
                       ),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -294,67 +294,116 @@ class _AdminCategoriesScreenState extends State<AdminCategoriesScreen> {
                               style: const TextStyle(fontSize: 24),
                             ),
                           ),
-                          const SizedBox(width: 16),
+                          const SizedBox(width: 14),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   cat.name,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
                                   style: GoogleFonts.cairo(
-                                    fontSize: 16,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     color: AppColors.textPrimary,
+                                    height: 1.2,
                                   ),
                                 ),
-                                if (cat.nameEn.isNotEmpty)
+                                if (cat.nameEn.isNotEmpty) ...[
+                                  const SizedBox(height: 2),
                                   Text(
                                     cat.nameEn,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(
                                       fontSize: 12,
                                       color: AppColors.textMuted,
+                                      height: 1.2,
                                     ),
                                   ),
+                                ],
+                                const SizedBox(height: 6),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 8,
+                                    vertical: 3,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.secondary.withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: Border.all(
+                                      color: AppColors.secondary.withValues(alpha: 0.3),
+                                      width: 0.8,
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const Icon(
+                                        Icons.place_outlined,
+                                        size: 13,
+                                        color: AppColors.secondaryDark,
+                                      ),
+                                      const SizedBox(width: 4),
+                                      Flexible(
+                                        child: Text(
+                                          '${cat.count} ${context.tr.placesAndRestaurants}',
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: GoogleFonts.cairo(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.secondaryDark,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 4,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppColors.secondary.withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Text(
-                              '${cat.count} ${context.tr.placesAndRestaurants}',
-                              style: GoogleFonts.cairo(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.secondaryDark,
-                              ),
-                            ),
-                          ),
                           const SizedBox(width: 8),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.edit_rounded,
-                              size: 20,
-                              color: AppColors.primary,
-                            ),
-                            tooltip: context.tr.edit,
-                            onPressed: () =>
-                                _showCategoryDialog(categoryToEdit: cat),
-                          ),
-                          IconButton(
-                            icon: Icon(
-                              Icons.delete_outline_rounded,
-                              size: 20,
-                              color: Colors.red[400],
-                            ),
-                            tooltip: context.tr.delete,
-                            onPressed: () => _showDeleteConfirmDialog(cat),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Material(
+                                color: AppColors.primary.withValues(alpha: 0.08),
+                                borderRadius: BorderRadius.circular(10),
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(10),
+                                  onTap: () => _showCategoryDialog(
+                                      categoryToEdit: cat),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(8),
+                                    child: Icon(
+                                      Icons.edit_rounded,
+                                      size: 18,
+                                      color: AppColors.primary,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 6),
+                              Material(
+                                color: Colors.red.withValues(alpha: 0.08),
+                                borderRadius: BorderRadius.circular(10),
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(10),
+                                  onTap: () =>
+                                      _showDeleteConfirmDialog(cat),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8),
+                                    child: Icon(
+                                      Icons.delete_outline_rounded,
+                                      size: 18,
+                                      color: Colors.red[600],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
