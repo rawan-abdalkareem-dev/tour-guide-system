@@ -39,13 +39,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
+  flutter_launcher_icons: "^0.14.4"
+
   # قواعد الكود
   flutter_lints: ^3.0.0
   
-  # أيقونة التطبيق
-  flutter_launcher_icons: ^0.13.1
-  
+
   # شاشة البداية
   flutter_native_splash: ^2.3.8
 
@@ -62,14 +61,6 @@ flutter:
   #       - asset: assets/fonts/Cairo-Bold.ttf
   #         weight: 700
 
-# ============= إعدادات أيقونة التطبيق =============
-flutter_icons:
-  android: true
-  ios: true
-  image_path: "assets/icon/icon.png"
-  adaptive_icon_background: "#0D47A1"
-  adaptive_icon_foreground: "assets/icon/icon_foreground.png"
-  remove_alpha_ios: true
 
 # ============= إعدادات شاشة البداية =============
 flutter_native_splash:
@@ -79,3 +70,22 @@ flutter_native_splash:
   ios: true
   web: false
   fullscreen: true
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "path/to/image.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "path/to/image.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "path/to/image.png"
